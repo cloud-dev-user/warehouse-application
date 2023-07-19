@@ -1,5 +1,8 @@
 pipeline {
   agent { label 'aws cloud node1' }
+  parameters {
+  choice choices: ['Dev', 'Test', 'UAT'], description: 'this  is environment parameter', name: 'environment'
+}
   stages {
     stage('Checkout Repo') {
       steps {
@@ -10,8 +13,17 @@ pipeline {
       steps {
         sh 'mvn clean install '
       }
+      }
+    stage('build CI stage ') {
+      steps {
+        sh 'mvn clean install '
+      }
+      }
+    stage('Show the parameters ') {
+      steps {
+       echo '$environment'
+      }
+      }
     
-
-  }
 }
 }

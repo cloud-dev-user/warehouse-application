@@ -14,12 +14,7 @@ pipeline {
         sh 'mvn clean install '
       }
       }
-    stage('build CI stage ') {
-      steps {
-        sh 'mvn clean install '
-      }
-      }
-    stage('Show the parameters ') {
+       stage('Show the parameters ') {
       steps {
        echo '$environment'
       }

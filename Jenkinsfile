@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Repo') {
       steps {
-        git branch: 'feature/cicd', url: 'https://github.com/cloud-dev-user/warehouse-application.git'
+        git branch: '${BRANCH_NAME}', url: 'https://github.com/cloud-dev-user/warehouse-application.git'
       }
     }
     stage('build CI stage ') {

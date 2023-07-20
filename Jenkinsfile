@@ -19,7 +19,18 @@ pipeline {
       steps {
        echo '$environment'
       }
-      }
-    
+      }   
 }
+post {
+  always {
+            echo " Build logs will be sent to the admin " 
+  }
+  success {
+             echo " build is sucessful " 
+  }
+  failure {
+             echo " build is failed " 
+  }
+}
+
 }
